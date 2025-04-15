@@ -1,0 +1,127 @@
+[
+    {
+        "Title": "The Count of Monte Cristo",
+        "Author": "Alexandre Dumas and Auguste Maquet",
+        "Genre": "Adventure"
+    },
+    {
+        "Title": "To Kill a Mockingbird",
+        "Author": "Harper Lee",
+        "Genre": "Fiction"
+    },
+    {
+        "Title": "1984",
+        "Author": "George Orwell",
+        "Genre": "Dystopian"
+    },
+    {
+        "Title": "Pride and Prejudice",
+        "Author": "Jane Austen",
+        "Genre": "Romance"
+    },
+    {
+        "Title": "Moby-Dick",
+        "Author": "Herman Melville",
+        "Genre": "Adventure"
+    },
+    {
+        "Title": "The Hobbit",
+        "Author": "J.R.R. Tolkien",
+        "Genre": "Fantasy"
+    },
+    {
+        "Title": "War and Peace",
+        "Author": "Leo Tolstoy",
+        "Genre": "Historical Fiction"
+    },
+    {
+        "Title": "The Great Gatsby",
+        "Author": "F. Scott Fitzgerald",
+        "Genre": "Tragedy"
+    },
+    {
+        "Title": "The Catcher in the Rye",
+        "Author": "J.D. Salinger",
+        "Genre": "Coming-of-Age"
+    },
+    {
+        "Title": "Brave New World",
+        "Author": "Aldous Huxley",
+        "Genre": "Science Fiction"
+    },
+    {
+        "Title": "The Chronicles of Narnia",
+        "Author": "C.S. Lewis",
+        "Genre": "Fantasy"
+    },
+    {
+        "Title": "Crime and Punishment",
+        "Author": "Fyodor Dostoevsky",
+        "Genre": "Philosophical Fiction"
+    },
+    {
+        "Title": "Frankenstein",
+        "Author": "Mary Shelley",
+        "Genre": "Gothic Fiction"
+    },
+    {
+        "Title": "The Brothers Karamazov",
+        "Author": "Fyodor Dostoevsky",
+        "Genre": "Philosophical Fiction"
+    },
+    {
+        "Title": "The Alchemist",
+        "Author": "Paulo Coelho",
+        "Genre": "Adventure"
+    },
+    {
+        "Title": "Jane Eyre",
+        "Author": "Charlotte Brontë",
+        "Genre": "Gothic Romance"
+    },
+    {
+        "Title": "The Picture of Dorian Gray",
+        "Author": "Oscar Wilde",
+        "Genre": "Philosophical Fiction"
+    },
+    {
+        "Title": "The Road",
+        "Author": "Cormac McCarthy",
+        "Genre": "Post-Apocalyptic"
+    },
+    {
+        "Title": "A Tale of Two Cities",
+        "Author": "Charles Dickens",
+        "Genre": "Historical Fiction"
+    },
+    {
+        "Title": "Les Misérables",
+        "Author": "Victor Hugo",
+        "Genre": "Historical Fiction"
+    },
+    {
+        "Title": "Dracula",
+        "Author": "Bram Stoker",
+        "Genre": "Horror"
+    },
+    {
+        "Title": "The Name of the Wind",
+        "Author": "Patrick Rothfuss",
+        "Genre": "Fantasy"
+    },
+    {
+        "Title": "Fahrenheit 451",
+        "Author": "Ray Bradbury",
+        "Genre": "Dystopian"
+    },
+    {
+        "Title": "Don Quixote",
+        "Author": "Miguel de Cervantes",
+        "Genre": "Satire"
+    },
+    {
+        "Title": "The Book Thief",
+        "Author": "Markus Zusak",
+        "Genre": "Historical Fiction"
+    }
+]
