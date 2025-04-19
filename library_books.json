@@ -1,492 +1,502 @@
 [
     {
-        "Author": "J.K. Rowling",
-        "Title": "Harry Potter and the Philosopher's Stone",
-        "Genre": "Fantasy"
+        "Author": "MARK TWAIN",
+        "Title": "PRIDE AND PREJUDICE",
+        "Genre": "LITERARY FICTION"
     },
     {
-        "Author": "George Orwell",
+        "Author": "MARK TWAIN",
+        "Title": "HARRY POTTER AND THE SORCERER'S STONE",
+        "Genre": "ROMANCE"
+    },
+    {
+        "Author": "AGATHA CHRISTIE",
+        "Title": "ADVENTURES OF HUCKLEBERRY FINN",
+        "Genre": "LITERARY FICTION"
+    },
+    {
+        "Author": "GEORGE ORWELL",
+        "Title": "BELOVED",
+        "Genre": "MYSTERY"
+    },
+    {
+        "Author": "TONI MORRISON",
+        "Title": "HARRY POTTER AND THE SORCERER'S STONE",
+        "Genre": "MYSTERY"
+    },
+    {
+        "Author": "F. SCOTT FITZGERALD",
+        "Title": "THE SHINING",
+        "Genre": "ROMANCE"
+    },
+    {
+        "Author": "J.K. ROWLING",
+        "Title": "THE GREAT GATSBY",
+        "Genre": "ROMANCE"
+    },
+    {
+        "Author": "J.K. ROWLING",
+        "Title": "THE OLD MAN AND THE SEA",
+        "Genre": "HORROR"
+    },
+    {
+        "Author": "GEORGE ORWELL",
+        "Title": "THE SHINING",
+        "Genre": "ROMANCE"
+    },
+    {
+        "Author": "JANE AUSTEN",
+        "Title": "AN AMERICAN MARRIAGE",
+        "Genre": "HORROR"
+    },
+    {
+        "Author": "TAYARI JONES",
+        "Title": "THE GREAT GATSBY",
+        "Genre": "MYSTERY"
+    },
+    {
+        "Author": "GEORGE ORWELL",
+        "Title": "THE OLD MAN AND THE SEA",
+        "Genre": "LITERARY FICTION"
+    },
+    {
+        "Author": "STEPHEN KING",
+        "Title": "PRIDE AND PREJUDICE",
+        "Genre": "DRAMA"
+    },
+    {
+        "Author": "JANE AUSTEN",
+        "Title": "THE GREAT GATSBY",
+        "Genre": "LITERARY FICTION"
+    },
+    {
+        "Author": "TONI MORRISON",
+        "Title": "BELOVED",
+        "Genre": "HISTORICAL FICTION"
+    },
+    {
+        "Author": "ERNEST HEMINGWAY",
+        "Title": "HARRY POTTER AND THE SORCERER'S STONE",
+        "Genre": "DRAMA"
+    },
+    {
+        "Author": "AGATHA CHRISTIE",
+        "Title": "THE SHINING",
+        "Genre": "HISTORICAL FICTION"
+    },
+    {
+        "Author": "STEPHEN KING",
+        "Title": "MURDER ON THE ORIENT EXPRESS",
+        "Genre": "DRAMA"
+    },
+    {
+        "Author": "TAYARI JONES",
+        "Title": "THE OLD MAN AND THE SEA",
+        "Genre": "LITERARY FICTION"
+    },
+    {
+        "Author": "AGATHA CHRISTIE",
+        "Title": "HARRY POTTER AND THE SORCERER'S STONE",
+        "Genre": "DYSTOPIAN"
+    },
+    {
+        "Author": "TONI MORRISON",
+        "Title": "MURDER ON THE ORIENT EXPRESS",
+        "Genre": "CLASSIC"
+    },
+    {
+        "Author": "TONI MORRISON",
+        "Title": "THE GREAT GATSBY",
+        "Genre": "CLASSIC"
+    },
+    {
+        "Author": "TAYARI JONES",
+        "Title": "THE OLD MAN AND THE SEA",
+        "Genre": "MYSTERY"
+    },
+    {
+        "Author": "AGATHA CHRISTIE",
+        "Title": "AN AMERICAN MARRIAGE",
+        "Genre": "HORROR"
+    },
+    {
+        "Author": "MARK TWAIN",
+        "Title": "HARRY POTTER AND THE SORCERER'S STONE",
+        "Genre": "LITERARY FICTION"
+    },
+    {
+        "Author": "JANE AUSTEN",
+        "Title": "AN AMERICAN MARRIAGE",
+        "Genre": "DYSTOPIAN"
+    },
+    {
+        "Author": "AGATHA CHRISTIE",
+        "Title": "PRIDE AND PREJUDICE",
+        "Genre": "CLASSIC"
+    },
+    {
+        "Author": "F. SCOTT FITZGERALD",
+        "Title": "THE SHINING",
+        "Genre": "FANTASY"
+    },
+    {
+        "Author": "F. SCOTT FITZGERALD",
+        "Title": "THE SHINING",
+        "Genre": "CLASSIC"
+    },
+    {
+        "Author": "J.K. ROWLING",
+        "Title": "THE SHINING",
+        "Genre": "HISTORICAL FICTION"
+    },
+    {
+        "Author": "J.K. ROWLING",
+        "Title": "THE SHINING",
+        "Genre": "FANTASY"
+    },
+    {
+        "Author": "STEPHEN KING",
+        "Title": "THE GREAT GATSBY",
+        "Genre": "LITERARY FICTION"
+    },
+    {
+        "Author": "F. SCOTT FITZGERALD",
+        "Title": "PRIDE AND PREJUDICE",
+        "Genre": "ROMANCE"
+    },
+    {
+        "Author": "MARK TWAIN",
+        "Title": "HARRY POTTER AND THE SORCERER'S STONE",
+        "Genre": "DYSTOPIAN"
+    },
+    {
+        "Author": "TAYARI JONES",
+        "Title": "ADVENTURES OF HUCKLEBERRY FINN",
+        "Genre": "LITERARY FICTION"
+    },
+    {
+        "Author": "F. SCOTT FITZGERALD",
+        "Title": "MURDER ON THE ORIENT EXPRESS",
+        "Genre": "ROMANCE"
+    },
+    {
+        "Author": "F. SCOTT FITZGERALD",
+        "Title": "MURDER ON THE ORIENT EXPRESS",
+        "Genre": "LITERARY FICTION"
+    },
+    {
+        "Author": "TAYARI JONES",
+        "Title": "ADVENTURES OF HUCKLEBERRY FINN",
+        "Genre": "DRAMA"
+    },
+    {
+        "Author": "J.K. ROWLING",
+        "Title": "BELOVED",
+        "Genre": "HISTORICAL FICTION"
+    },
+    {
+        "Author": "MARK TWAIN",
+        "Title": "MURDER ON THE ORIENT EXPRESS",
+        "Genre": "ADVENTURE"
+    },
+    {
+        "Author": "ERNEST HEMINGWAY",
+        "Title": "BELOVED",
+        "Genre": "DYSTOPIAN"
+    },
+    {
+        "Author": "STEPHEN KING",
+        "Title": "HARRY POTTER AND THE SORCERER'S STONE",
+        "Genre": "DYSTOPIAN"
+    },
+    {
+        "Author": "MARK TWAIN",
+        "Title": "AN AMERICAN MARRIAGE",
+        "Genre": "ROMANCE"
+    },
+    {
+        "Author": "F. SCOTT FITZGERALD",
+        "Title": "MURDER ON THE ORIENT EXPRESS",
+        "Genre": "CLASSIC"
+    },
+    {
+        "Author": "TONI MORRISON",
+        "Title": "THE OLD MAN AND THE SEA",
+        "Genre": "HORROR"
+    },
+    {
+        "Author": "GEORGE ORWELL",
+        "Title": "THE OLD MAN AND THE SEA",
+        "Genre": "FANTASY"
+    },
+    {
+        "Author": "STEPHEN KING",
+        "Title": "PRIDE AND PREJUDICE",
+        "Genre": "ROMANCE"
+    },
+    {
+        "Author": "TONI MORRISON",
+        "Title": "THE OLD MAN AND THE SEA",
+        "Genre": "DRAMA"
+    },
+    {
+        "Author": "TAYARI JONES",
+        "Title": "PRIDE AND PREJUDICE",
+        "Genre": "HISTORICAL FICTION"
+    },
+    {
+        "Author": "JANE AUSTEN",
+        "Title": "HARRY POTTER AND THE SORCERER'S STONE",
+        "Genre": "MYSTERY"
+    },
+    {
+        "Author": "AGATHA CHRISTIE",
+        "Title": "PRIDE AND PREJUDICE",
+        "Genre": "FANTASY"
+    },
+    {
+        "Author": "GEORGE ORWELL",
+        "Title": "ADVENTURES OF HUCKLEBERRY FINN",
+        "Genre": "ROMANCE"
+    },
+    {
+        "Author": "STEPHEN KING",
+        "Title": "BELOVED",
+        "Genre": "FANTASY"
+    },
+    {
+        "Author": "AGATHA CHRISTIE",
+        "Title": "ADVENTURES OF HUCKLEBERRY FINN",
+        "Genre": "DYSTOPIAN"
+    },
+    {
+        "Author": "J.K. ROWLING",
+        "Title": "MURDER ON THE ORIENT EXPRESS",
+        "Genre": "ROMANCE"
+    },
+    {
+        "Author": "JANE AUSTEN",
+        "Title": "BELOVED",
+        "Genre": "HORROR"
+    },
+    {
+        "Author": "GEORGE ORWELL",
+        "Title": "THE GREAT GATSBY",
+        "Genre": "HISTORICAL FICTION"
+    },
+    {
+        "Author": "GEORGE ORWELL",
+        "Title": "THE OLD MAN AND THE SEA",
+        "Genre": "ROMANCE"
+    },
+    {
+        "Author": "MARK TWAIN",
+        "Title": "PRIDE AND PREJUDICE",
+        "Genre": "CLASSIC"
+    },
+    {
+        "Author": "MARK TWAIN",
+        "Title": "MURDER ON THE ORIENT EXPRESS",
+        "Genre": "MYSTERY"
+    },
+    {
+        "Author": "MARK TWAIN",
+        "Title": "THE OLD MAN AND THE SEA",
+        "Genre": "FANTASY"
+    },
+    {
+        "Author": "J.K. ROWLING",
+        "Title": "MURDER ON THE ORIENT EXPRESS",
+        "Genre": "MYSTERY"
+    },
+    {
+        "Author": "J.K. ROWLING",
+        "Title": "BELOVED",
+        "Genre": "ROMANCE"
+    },
+    {
+        "Author": "TONI MORRISON",
+        "Title": "THE GREAT GATSBY",
+        "Genre": "HORROR"
+    },
+    {
+        "Author": "AGATHA CHRISTIE",
+        "Title": "MURDER ON THE ORIENT EXPRESS",
+        "Genre": "ROMANCE"
+    },
+    {
+        "Author": "STEPHEN KING",
+        "Title": "THE SHINING",
+        "Genre": "DRAMA"
+    },
+    {
+        "Author": "ERNEST HEMINGWAY",
+        "Title": "AN AMERICAN MARRIAGE",
+        "Genre": "LITERARY FICTION"
+    },
+    {
+        "Author": "STEPHEN KING",
+        "Title": "THE SHINING",
+        "Genre": "ADVENTURE"
+    },
+    {
+        "Author": "J.K. ROWLING",
+        "Title": "THE OLD MAN AND THE SEA",
+        "Genre": "HISTORICAL FICTION"
+    },
+    {
+        "Author": "STEPHEN KING",
+        "Title": "THE OLD MAN AND THE SEA",
+        "Genre": "MYSTERY"
+    },
+    {
+        "Author": "TONI MORRISON",
+        "Title": "BELOVED",
+        "Genre": "HORROR"
+    },
+    {
+        "Author": "TONI MORRISON",
+        "Title": "ADVENTURES OF HUCKLEBERRY FINN",
+        "Genre": "DYSTOPIAN"
+    },
+    {
+        "Author": "J.K. ROWLING",
+        "Title": "THE OLD MAN AND THE SEA",
+        "Genre": "LITERARY FICTION"
+    },
+    {
+        "Author": "JANE AUSTEN",
         "Title": "1984",
-        "Genre": "Dystopian"
+        "Genre": "FANTASY"
     },
     {
-        "Author": "Jane Austen",
-        "Title": "Pride and Prejudice",
-        "Genre": "Romance"
+        "Author": "J.K. ROWLING",
+        "Title": "HARRY POTTER AND THE SORCERER'S STONE",
+        "Genre": "CLASSIC"
     },
     {
-        "Author": "F. Scott Fitzgerald",
-        "Title": "The Great Gatsby",
-        "Genre": "Literary Fiction"
+        "Author": "JANE AUSTEN",
+        "Title": "THE SHINING",
+        "Genre": "FANTASY"
     },
     {
-        "Author": "J.R.R. Tolkien",
-        "Title": "The Lord of the Rings",
-        "Genre": "Fantasy"
+        "Author": "STEPHEN KING",
+        "Title": "BELOVED",
+        "Genre": "ROMANCE"
     },
     {
-        "Author": "Agatha Christie",
-        "Title": "Murder on the Orient Express",
-        "Genre": "Mystery"
+        "Author": "TAYARI JONES",
+        "Title": "1984",
+        "Genre": "ADVENTURE"
     },
     {
-        "Author": "Harper Lee",
-        "Title": "To Kill a Mockingbird",
-        "Genre": "Literary Fiction"
+        "Author": "JANE AUSTEN",
+        "Title": "MURDER ON THE ORIENT EXPRESS",
+        "Genre": "HISTORICAL FICTION"
     },
     {
-        "Author": "Gabriel Garcia Marquez",
-        "Title": "One Hundred Years of Solitude",
-        "Genre": "Magical Realism"
+        "Author": "TONI MORRISON",
+        "Title": "ADVENTURES OF HUCKLEBERRY FINN",
+        "Genre": "DRAMA"
     },
     {
-        "Author": "Ernest Hemingway",
-        "Title": "The Old Man and the Sea",
-        "Genre": "Literary Fiction"
+        "Author": "GEORGE ORWELL",
+        "Title": "MURDER ON THE ORIENT EXPRESS",
+        "Genre": "CLASSIC"
     },
     {
-        "Author": "Charlotte Bronte",
-        "Title": "Jane Eyre",
-        "Genre": "Gothic Romance"
+        "Author": "F. SCOTT FITZGERALD",
+        "Title": "AN AMERICAN MARRIAGE",
+        "Genre": "FANTASY"
     },
     {
-        "Author": "Aldous Huxley",
-        "Title": "Brave New World",
-        "Genre": "Dystopian"
+        "Author": "AGATHA CHRISTIE",
+        "Title": "HARRY POTTER AND THE SORCERER'S STONE",
+        "Genre": "MYSTERY"
     },
     {
-        "Author": "Mary Shelley",
-        "Title": "Frankenstein",
-        "Genre": "Gothic Horror"
+        "Author": "JANE AUSTEN",
+        "Title": "ADVENTURES OF HUCKLEBERRY FINN",
+        "Genre": "ROMANCE"
     },
     {
-        "Author": "Herman Melville",
-        "Title": "Moby-Dick",
-        "Genre": "Adventure"
+        "Author": "TONI MORRISON",
+        "Title": "MURDER ON THE ORIENT EXPRESS",
+        "Genre": "HORROR"
     },
     {
-        "Author": "Toni Morrison",
-        "Title": "Beloved",
-        "Genre": "Historical Fiction"
+        "Author": "J.K. ROWLING",
+        "Title": "HARRY POTTER AND THE SORCERER'S STONE",
+        "Genre": "LITERARY FICTION"
     },
     {
-        "Author": "Leo Tolstoy",
-        "Title": "War and Peace",
-        "Genre": "Historical Fiction"
+        "Author": "JANE AUSTEN",
+        "Title": "PRIDE AND PREJUDICE",
+        "Genre": "DRAMA"
     },
     {
-        "Author": "Fyodor Dostoevsky",
-        "Title": "Crime and Punishment",
-        "Genre": "Philosophical Fiction"
+        "Author": "JANE AUSTEN",
+        "Title": "1984",
+        "Genre": "LITERARY FICTION"
     },
     {
-        "Author": "Mark Twain",
-        "Title": "Adventures of Huckleberry Finn",
-        "Genre": "Adventure"
+        "Author": "GEORGE ORWELL",
+        "Title": "ADVENTURES OF HUCKLEBERRY FINN",
+        "Genre": "LITERARY FICTION"
     },
     {
-        "Author": "Emily Bronte",
-        "Title": "Wuthering Heights",
-        "Genre": "Gothic Romance"
+        "Author": "ERNEST HEMINGWAY",
+        "Title": "AN AMERICAN MARRIAGE",
+        "Genre": "HORROR"
     },
     {
-        "Author": "Victor Hugo",
-        "Title": "Les Miserables",
-        "Genre": "Historical Fiction"
+        "Author": "AGATHA CHRISTIE",
+        "Title": "1984",
+        "Genre": "HISTORICAL FICTION"
     },
     {
-        "Author": "Joseph Conrad",
-        "Title": "Heart of Darkness",
-        "Genre": "Literary Fiction"
+        "Author": "ERNEST HEMINGWAY",
+        "Title": "HARRY POTTER AND THE SORCERER'S STONE",
+        "Genre": "HISTORICAL FICTION"
     },
     {
-        "Author": "Chinua Achebe",
-        "Title": "Things Fall Apart",
-        "Genre": "Historical Fiction"
+        "Author": "TAYARI JONES",
+        "Title": "BELOVED",
+        "Genre": "HORROR"
     },
     {
-        "Author": "John Steinbeck",
-        "Title": "The Grapes of Wrath",
-        "Genre": "Literary Fiction"
+        "Author": "TONI MORRISON",
+        "Title": "PRIDE AND PREJUDICE",
+        "Genre": "DYSTOPIAN"
     },
     {
-        "Author": "William Faulkner",
-        "Title": "The Sound and the Fury",
-        "Genre": "Literary Fiction"
+        "Author": "GEORGE ORWELL",
+        "Title": "THE OLD MAN AND THE SEA",
+        "Genre": "ADVENTURE"
     },
     {
-        "Author": "Margaret Atwood",
-        "Title": "The Handmaid's Tale",
-        "Genre": "Dystopian"
+        "Author": "TONI MORRISON",
+        "Title": "1984",
+        "Genre": "LITERARY FICTION"
     },
     {
-        "Author": "Salman Rushdie",
-        "Title": "Midnight's Children",
-        "Genre": "Magical Realism"
+        "Author": "J.K. ROWLING",
+        "Title": "AN AMERICAN MARRIAGE",
+        "Genre": "MYSTERY"
     },
     {
-        "Author": "Kazuo Ishiguro",
-        "Title": "Never Let Me Go",
-        "Genre": "Dystopian"
+        "Author": "TAYARI JONES",
+        "Title": "AN AMERICAN MARRIAGE",
+        "Genre": "LITERARY FICTION"
     },
     {
-        "Author": "Virginia Woolf",
-        "Title": "Mrs Dalloway",
-        "Genre": "Literary Fiction"
+        "Author": "J.K. ROWLING",
+        "Title": "AN AMERICAN MARRIAGE",
+        "Genre": "HISTORICAL FICTION"
     },
     {
-        "Author": "James Joyce",
-        "Title": "Ulysses",
-        "Genre": "Modernist Fiction"
-    },
-    {
-        "Author": "William Shakespeare",
-        "Title": "Hamlet",
-        "Genre": "Tragedy"
-    },
-    {
-        "Author": "Homer",
-        "Title": "The Odyssey",
-        "Genre": "Epic Poetry"
-    },
-    {
-        "Author": "Dante Alighieri",
-        "Title": "The Divine Comedy",
-        "Genre": "Epic Poetry"
-    },
-    {
-        "Author": "Miguel de Cervantes",
-        "Title": "Don Quixote",
-        "Genre": "Adventure"
-    },
-    {
-        "Author": "Geoffrey Chaucer",
-        "Title": "The Canterbury Tales",
-        "Genre": "Poetry"
-    },
-    {
-        "Author": "Jonathan Swift",
-        "Title": "Gulliver's Travels",
-        "Genre": "Satire"
-    },
-    {
-        "Author": "Daniel Defoe",
-        "Title": "Robinson Crusoe",
-        "Genre": "Adventure"
-    },
-    {
-        "Author": "Charles Dickens",
-        "Title": "Great Expectations",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Gustave Flaubert",
-        "Title": "Madame Bovary",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Thomas Hardy",
-        "Title": "Tess of the d'Urbervilles",
-        "Genre": "Tragedy"
-    },
-    {
-        "Author": "D.H. Lawrence",
-        "Title": "Sons and Lovers",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "E.M. Forster",
-        "Title": "A Passage to India",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "George Eliot",
-        "Title": "Middlemarch",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Nathaniel Hawthorne",
-        "Title": "The Scarlet Letter",
-        "Genre": "Historical Fiction"
-    },
-    {
-        "Author": "Willa Cather",
-        "Title": "My Antonia",
-        "Genre": "Historical Fiction"
-    },
-    {
-        "Author": "Edith Wharton",
-        "Title": "The Age of Innocence",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Henry James",
-        "Title": "The Portrait of a Lady",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Kate Chopin",
-        "Title": "The Awakening",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Zora Neale Hurston",
-        "Title": "Their Eyes Were Watching God",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Ralph Ellison",
-        "Title": "Invisible Man",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Richard Wright",
-        "Title": "Native Son",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Jack London",
-        "Title": "The Call of the Wild",
-        "Genre": "Adventure"
-    },
-    {
-        "Author": "Stephen Crane",
-        "Title": "The Red Badge of Courage",
-        "Genre": "Historical Fiction"
-    },
-    {
-        "Author": "Ursula K. Le Guin",
-        "Title": "The Left Hand of Darkness",
-        "Genre": "Science Fiction"
-    },
-    {
-        "Author": "Isaac Asimov",
-        "Title": "Foundation",
-        "Genre": "Science Fiction"
-    },
-    {
-        "Author": "Ray Bradbury",
-        "Title": "Fahrenheit 451",
-        "Genre": "Dystopian"
-    },
-    {
-        "Author": "Philip K. Dick",
-        "Title": "Do Androids Dream of Electric Sheep?",
-        "Genre": "Science Fiction"
-    },
-    {
-        "Author": "Arthur C. Clarke",
-        "Title": "2001: A Space Odyssey",
-        "Genre": "Science Fiction"
-    },
-    {
-        "Author": "H.G. Wells",
-        "Title": "The War of the Worlds",
-        "Genre": "Science Fiction"
-    },
-    {
-        "Author": "Jules Verne",
-        "Title": "Twenty Thousand Leagues Under the Sea",
-        "Genre": "Adventure"
-    },
-    {
-        "Author": "Robert Louis Stevenson",
-        "Title": "Treasure Island",
-        "Genre": "Adventure"
-    },
-    {
-        "Author": "Bram Stoker",
-        "Title": "Dracula",
-        "Genre": "Gothic Horror"
-    },
-    {
-        "Author": "Edgar Allan Poe",
-        "Title": "The Tell-Tale Heart",
-        "Genre": "Gothic Horror"
-    },
-    {
-        "Author": "Oscar Wilde",
-        "Title": "The Picture of Dorian Gray",
-        "Genre": "Gothic Fiction"
-    },
-    {
-        "Author": "Alexandre Dumas",
-        "Title": "The Count of Monte Cristo",
-        "Genre": "Adventure"
-    },
-    {
-        "Author": "Arthur Conan Doyle",
-        "Title": "The Hound of the Baskervilles",
-        "Genre": "Mystery"
-    },
-    {
-        "Author": "Wilkie Collins",
-        "Title": "The Woman in White",
-        "Genre": "Mystery"
-    },
-    {
-        "Author": "Daphne du Maurier",
-        "Title": "Rebecca",
-        "Genre": "Gothic Fiction"
-    },
-    {
-        "Author": "Shirley Jackson",
-        "Title": "The Haunting of Hill House",
-        "Genre": "Gothic Horror"
-    },
-    {
-        "Author": "Stephen King",
-        "Title": "The Shining",
-        "Genre": "Horror"
-    },
-    {
-        "Author": "Anne Rice",
-        "Title": "Interview with the Vampire",
-        "Genre": "Gothic Horror"
-    },
-    {
-        "Author": "Clive Barker",
-        "Title": "The Hellbound Heart",
-        "Genre": "Horror"
-    },
-    {
-        "Author": "Neil Gaiman",
-        "Title": "American Gods",
-        "Genre": "Fantasy"
-    },
-    {
-        "Author": "Terry Pratchett",
-        "Title": "Good Omens",
-        "Genre": "Fantasy"
-    },
-    {
-        "Author": "C.S. Lewis",
-        "Title": "The Lion, the Witch\n and the Wardrobe",
-        "Genre": "Fantasy"
-    },
-    {
-        "Author": "Madeleine L'Engle",
-        "Title": "A Wrinkle in Time",
-        "Genre": "Science Fiction"
-    },
-    {
-        "Author": "Lois Lowry",
-        "Title": "The Giver",
-        "Genre": "Dystopian"
-    },
-    {
-        "Author": "Suzanne Collins",
-        "Title": "The Hunger Games",
-        "Genre": "Dystopian"
-    },
-    {
-        "Author": "Veronica Roth",
-        "Title": "Divergent",
-        "Genre": "Dystopian"
-    },
-    {
-        "Author": "Michael Crichton",
-        "Title": "Jurassic Park",
-        "Genre": "Science Fiction"
-    },
-    {
-        "Author": "Tom Clancy",
-        "Title": "The Hunt for Red October",
-        "Genre": "Thriller"
-    },
-    {
-        "Author": "John Grisham",
-        "Title": "The Firm",
-        "Genre": "Thriller"
-    },
-    {
-        "Author": "Dan Brown",
-        "Title": "The Da Vinci Code",
-        "Genre": "Thriller"
-    },
-    {
-        "Author": "Stieg Larsson",
-        "Title": "The Girl with the Dragon Tattoo",
-        "Genre": "Mystery"
-    },
-    {
-        "Author": "Gillian Flynn",
-        "Title": "Gone Girl",
-        "Genre": "Thriller"
-    },
-    {
-        "Author": "Khaled Hosseini",
-        "Title": "The Kite Runner",
-        "Genre": "Historical Fiction"
-    },
-    {
-        "Author": "Yann Martel",
-        "Title": "Life of Pi",
-        "Genre": "Adventure"
-    },
-    {
-        "Author": "Paulo Coelho",
-        "Title": "The Alchemist",
-        "Genre": "Philosophical Fiction"
-    },
-    {
-        "Author": "Haruki Murakami",
-        "Title": "Norwegian Wood",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Jhumpa Lahiri",
-        "Title": "The Namesake",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Isabel Allende",
-        "Title": "The House of the Spirits",
-        "Genre": "Magical Realism"
-    },
-    {
-        "Author": "Amy Tan",
-        "Title": "The Joy Luck Club",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Barbara Kingsolver",
-        "Title": "The Poisonwood Bible",
-        "Genre": "Historical Fiction"
-    },
-    {
-        "Author": "Ann Patchett",
-        "Title": "Bel Canto",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Colson Whitehead",
-        "Title": "The Underground Railroad",
-        "Genre": "Historical Fiction"
-    },
-    {
-        "Author": "Ta-Nehisi Coates",
-        "Title": "The Water Dancer",
-        "Genre": "Historical Fiction"
-    },
-    {
-        "Author": "Celeste Ng",
-        "Title": "Little Fires Everywhere",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Ocean Vuong",
-        "Title": "On Earth We're Briefly Gorgeous",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Brit Bennett",
-        "Title": "The Vanishing Half",
-        "Genre": "Literary Fiction"
-    },
-    {
-        "Author": "Tayari Jones",
-        "Title": "An American Marriage",
-        "Genre": "Literary Fiction"
+        "Author": "TAYARI JONES",
+        "Title": "1984",
+        "Genre": "LITERARY FICTION"
     }
 ]

@@ -66,7 +66,7 @@ class Library:
             for book in self.parent.tree.selection():
                 self.parent.book_iid.remove(book)
                 del self.books[self.parent.tree.selection().index(book)]
-                self.parent.tree.delete(book)
+                self.parent.tree_insert_handler(self.books)
 
 
     def search(self, search_value="", event=None):
