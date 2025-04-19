@@ -4,11 +4,33 @@ from book import Book
 
 
 class Add_Dialog(Toplevel):
+    """ Handles the custom dialog box generated to handle user input for
+    adding a new book and sends the input data to a Library object. Inherits
+    from tkinter.Toplevel.
+
+    Public methods:
+    on_ok()
+    on_cancel()
+
+    Object attributes:
+    self.parent -- a call for the parent Main object.
+    self.new_book -- stores the new book's data in a dictionary.
+    """
+
     def __init__(self, parent, gen_font):
+        """ Creates the custom dialog box using tkinter's Toplevel object.
+        Defines the widets used, places them into the dialog box, and other
+        items.
+        """
+
+        # Call the __init__ function of Toplevel, passing Main as the root.
         super().__init__(parent)
 
         self.parent = parent
-        self.gen_font = gen_font
+        self.new_book = None
+        self.author = StringVar()
+        self.title_var = StringVar()
+        self.genre = StringVar()
 
         self.title("Add Book")
         self.geometry("300x200")
@@ -19,66 +41,84 @@ class Add_Dialog(Toplevel):
         self.transient(parent)
         self.grab_set()
 
-        self.new_book = None
 
-        # self.gen_font = parent.gen_font
+        ################################
+        ## Define widgets to be used. ##
+        ################################
+        author_label = Label(self, text="Author:", font=gen_font)
+        author_entry = Entry(self, font=gen_font, textvariable=self.author)
+        title_label = Label(self, text="Title:", font=gen_font)
+        title_entry = Entry(self, font=gen_font, textvariable=self.title_var)
+        genre_label = Label(self, text="Genre:", font=gen_font)
+        genre_entry = Entry(self, font=gen_font, textvariable=self.genre)
+        ok = Button(self, text="OK", command=self.on_ok, font=gen_font)
+        cancel = Button(self, text="Cancel", command=self.on_cancel, 
+                        font=gen_font)
+        
 
-        author_label = Label(self, text="Author:", font=("Helvetica", 12))
-        self.author_entry = Entry(self, font=("Helvetica", 12))
-        
-        title_label = Label(self, text="Title:", font=("Helvetica", 12))
-        self.title_entry = Entry(self, font=("Helvetica", 12))
-        
-        genre_label = Label(self, text="Genre:", font=("Helvetica", 12))
-        self.genre_entry = Entry(self, font=("Helvetica", 12))
-        
-        ok = Button(self, text="OK", command=self.on_ok, font=("Helvetica", 12))
-        cancel = Button(
-            self, 
-            text="Cancel", 
-            command=self.on_cancel, 
-            font=("Helvetica", 12)
-            )
-        
+        ########################
+        ## Place all widgets. ##
+        ########################
         author_label.grid(row=0, column=0, padx=5, pady=5, sticky="e")
-        self.author_entry.grid(row=0, column=1, padx=5, pady=5)
+        author_entry.grid(row=0, column=1, padx=5, pady=5)
         title_label.grid(row=1, column=0, padx=5, pady=5, sticky="e")
-        self.title_entry.grid(row=1, column=1, padx=5, pady=5)
+        title_entry.grid(row=1, column=1, padx=5, pady=5)
         genre_label.grid(row=2, column=0, padx=5, pady=5, sticky="e")
-        self.genre_entry.grid(row=2, column=1, padx=5, pady=5)
-        ok.grid(row=3, column=0, pady=10)
-        cancel.grid(row=3, column=1, pady=10)
+        genre_entry.grid(row=2, column=1, padx=5, pady=5)
+        ok.grid(row=3, column=0, padx=5, pady=10, sticky="w")
+        cancel.grid(row=3, column=1, padx=5, pady=10, sticky="e")
 
 
-        # Center the dialog relative to the parent
+        #####################
+        ## Misc. measures. ##
+        #####################
+
+        # Gets tkinter to place all widgets before continuing.
         self.update_idletasks()
-        x = parent.winfo_x() + (parent.winfo_width() - self.winfo_width()) // 2
+
+        # Calculates x and y-coordinates needed to be placed on in order
+        # to be centered on the main GUI.
+        x = (parent.winfo_x() 
+             + (parent.winfo_width() - self.winfo_width()) // 2)
         y = (parent.winfo_y() 
-             + (parent.winfo_height() - self.winfo_height()) // 2
-             )
+             + (parent.winfo_height() - self.winfo_height()) // 2)
+        
+        # Set window position according to calculated coordinates.
         self.geometry(f"+{x}+{y}")
 
-        self.author_entry.focus_set()
+        # Set initial keyboard focus to be on author_entry.
+        author_entry.focus_set()
+
+        print(self.winfo_height())
 
 
     def on_ok(self):
-        author = self.author_entry.get().strip()
-        title = self.title_entry.get().strip()
-        genre = self.genre_entry.get().strip()
+        """ Handles the logic upon the user submitting their inputs.
+        Ensures that user input is not empty upon submission. Allows
+        user to cancel the process. 
+        """
 
+        # .get() required to retrieve user input in each entry as a string*.
+        author = self.author.get().strip()
+        title = self.title_var.get().strip()
+        genre = self.genre.get().strip()
 
+        # If any entry is empty:
         if not author or not title or not genre:
             messagebox.showwarning(
                 "Fields cannot be empty", 
                 "Please fill all fields."
                 )
             
+            # Does not close the dialog box.
             return
         
         self.new_book = Book(author.upper(), title.upper(), genre.upper())
 
+        # Close the dialog box.
         self.destroy()
 
 
     def on_cancel(self):
+        """ Closes the dialog box when the user presses 'cancel'."""
         self.destroy()

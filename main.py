@@ -5,11 +5,31 @@ import re
 
 
 class Main:
+    """ A class representing the library catalog GUI. Displays data of books
+    provided by a Library class.
+
+    Public methods:
+    start_gui()
+    tree_insert_handler(books)
+    sel_handler(select=False)
+
+    Object attributes:
+    self.root -- the GUI main window.
+    self.gen_font -- the font settings used for all widgets with text.
+    self.tree -- the Treeview widget used to display book data.
+    self.search_entry -- the Entry widget used for entering searching values.
+    self.search_value -- a StringVar() storing the search value.
+    self.library -- a Library object where book data is handled.
+    self.book_iid -- a list storing book IIDs from self.tree to allow for
+    access and editing of items in self.tree.
+    """
+
     def __init__(self):
+        """ Defines the GUI root, class attributes, instantiates the 
+        Library, and starts the root main loop. Once the main loop is exited
+        upon program close, saves the changes made to data.
         """
-        Initialize main window with configurations, other class attributes,
-        and the rest of the GUI.
-        """
+
         self.root = Tk()
         self.root.title("Library Catalog")
         self.root.geometry("800x700")
@@ -45,14 +65,18 @@ class Main:
 
 
     def start_gui(self, root):
+        """ Defines tkinter widgets, configures them, places them into the
+        main window, adjusts the window layout, and other misc. items.
+        """
+
         # A frame to place the rest of the GUI within.
         main_window = Frame(root)
         main_window.pack(expand=TRUE, fill=BOTH, padx=15, pady=15)  
 
 
-        ####################################
-        ## Define all widgets to be used. ##
-        ####################################
+        ################################
+        ## Define widgets to be used. ##
+        ################################
         search_label = ttk.Label(
             main_window, text="Search for a title or author: ", anchor="w")
         self.search_entry = ttk.Entry(
@@ -60,6 +84,7 @@ class Main:
         
         self.tree = ttk.Treeview(
             main_window, selectmode="extended", show="headings")
+        
         # Define tree columns, as well as redefine #0.
         self.tree["columns"] = ("author", "title", "genre")
 
@@ -124,6 +149,7 @@ class Main:
         # Ensure tree and search_entry expand horizontally
         # upon window resizing.
         main_window.columnconfigure(0, weight=1)
+
         # Ensure the tree expands vertically upon window resizing.
         main_window.rowconfigure(2, weight=1)
 
@@ -149,14 +175,14 @@ class Main:
 
 
     def tree_insert_handler(self, books):
-        """Handles editing items in tree upon adding, deleting, 
+        """ Handles editing items in tree upon adding, deleting, 
         initializing, and searching books.
 
         Removes all items from self.tree and their IIDs, 
         then inserts books into self.tree while recording their IIDs.
 
         Keyword parameters:
-        books -- the list of Book objects to load onto the tree (required)
+        books -- the list of Book objects to load onto the tree. (required)
         """
 
         # Deletes all items in tree and book_iid.
@@ -175,13 +201,14 @@ class Main:
 
 
     def sel_handler(self, select=False):
-        """Selects all items in self.tree if select=True, otherwise 
+        """ Selects all items in self.tree if select=True, otherwise 
         deselects all items.
 
         Keyword parameters:
         select -- Selects all items if True, unselects all items otherwise
         (default: False).
         """
+
         if select:
             self.tree.selection_set(tuple(self.tree.get_children()))
 
@@ -189,8 +216,9 @@ class Main:
             self.tree.selection_remove(tuple(self.tree.get_children()))
 
 
+    @staticmethod
     def titlecase(text):
-        """A function to better convert text to title case than .title().
+        """ A function to better convert text to title case than .title().
         Handles apostrophes (e.g. 's) better than .title().
 
         Keyword parameters:
