@@ -95,8 +95,9 @@ class Add_Dialog(Toplevel):
 
     def on_ok(self):
         """ Handles the logic upon the user submitting their inputs.
-        Ensures that user input is not empty upon submission. Allows
-        user to cancel the process. 
+        Ensures that user input is not empty upon submission and that 
+        the added book does not have a duplicate title as an existing
+        book in the database. Allows user to cancel the process. 
         """
 
         # .get() required to retrieve user input in each entry as a string*.
@@ -114,7 +115,7 @@ class Add_Dialog(Toplevel):
         
         self.new_book = Book(author.upper(), title.upper(), genre.upper())
         
-        #
+        # If new_book's title is the same with an existing book:
         if repr(self.new_book) in [repr(book) for book in self.books]:
             messagebox.showwarning("Duplicate detected", 
                                    "This book has already been added.")
