@@ -20,8 +20,6 @@ class Main:
     self.search_entry -- the Entry widget used for entering searching values.
     self.search_value -- a StringVar() storing the search value.
     self.library -- a Library object where book data is handled.
-    self.book_iid -- a list storing book IIDs from self.tree to allow for
-    access and editing of items in self.tree.
     """
 
     def __init__(self):
@@ -49,11 +47,6 @@ class Main:
 
         # Initialize the library object.
         self.library = Library(self)
-
-        # To store unique tree entry IDs returned whenever inserting
-        # a row into the Treeview. Used to manage programmatic
-        # item selection and deletion.
-        self.book_iid = []
 
         # Initialize the rest of the GUI.
         self.start_gui(self.root)        
@@ -162,7 +155,7 @@ class Main:
         # upon program start. Exception handling used in case that the 
         # records file is empty.
         try:
-            self.tree.selection_set(self.book_iid[0])
+            self.tree.selection_set(self.tree.get_children()[0])
         except IndexError:
             pass
         
@@ -185,19 +178,13 @@ class Main:
         books -- the list of Book objects to load onto the tree. (required)
         """
 
-        # Deletes all items in tree and book_iid.
-        self.tree.delete(*self.tree.get_children())
-        self.book_iid = []        
+        # Deletes all items in tree.
+        self.tree.delete(*self.tree.get_children())       
         
-        # Insert books into the tree while appending their iid into
-        # book_iid.
         for book in books:
-            self.book_iid.append(
-                self.tree.insert(
-                    "", END, 
-                    values=(self.titlecase(book.author), 
-                            self.titlecase(book.title), 
-                            self.titlecase(book.genre))))
+            self.tree.insert("", END, values=(self.titlecase(book.author), 
+                                              self.titlecase(book.title), 
+                                              self.titlecase(book.genre)))
 
 
     def sel_handler(self, select=False):

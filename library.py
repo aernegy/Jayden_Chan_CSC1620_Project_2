@@ -78,10 +78,10 @@ class Library:
             self.parent.tree_insert_handler(self.books)
 
             # Focuses and sets user selection to the new book.
-            self.parent.tree.see(self.parent.book_iid[-1])
+            self.parent.tree.see(self.parent.tree.get_children()[-1])
             self.parent.tree.selection_remove(
                 tuple(self.parent.tree.get_children()))
-            self.parent.tree.selection_set(self.parent.book_iid[-1])
+            self.parent.tree.selection_set(self.parent.tree.get_children()[-1])
 
 
     def delete(self):
@@ -97,13 +97,15 @@ class Library:
             return
 
         #If the user confirms their intention to delete books:
-        if messagebox.askokcancel(
+        elif messagebox.askokcancel(
                 title="Delete books", 
                 message="Confirm deletion of selected books?"):
+            error = 0
             for book in self.parent.tree.selection():
-                print("Book:", book)
-                self.parent.book_iid.remove(book)
-                del self.books[self.parent.tree.selection().index(book)]
+                index = self.parent.tree.get_children().index(book)
+                
+                del self.books[index - error]
+                error += 1
 
             # Update the tree with the new list of books.
             self.parent.tree_insert_handler(self.books)
@@ -149,7 +151,6 @@ class Library:
 
         save_file = []
 
-        print(self.books)
         for book in self.books:
             save_file.append(
                 {

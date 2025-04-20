@@ -1,37 +1,7 @@
 [
     {
-        "Author": "MARK TWAIN",
-        "Title": "PRIDE AND PREJUDICE",
-        "Genre": "LITERARY FICTION"
-    },
-    {
-        "Author": "MARK TWAIN",
-        "Title": "HARRY POTTER AND THE SORCERER'S STONE",
-        "Genre": "ROMANCE"
-    },
-    {
-        "Author": "AGATHA CHRISTIE",
-        "Title": "ADVENTURES OF HUCKLEBERRY FINN",
-        "Genre": "LITERARY FICTION"
-    },
-    {
-        "Author": "GEORGE ORWELL",
-        "Title": "BELOVED",
-        "Genre": "MYSTERY"
-    },
-    {
-        "Author": "TONI MORRISON",
-        "Title": "HARRY POTTER AND THE SORCERER'S STONE",
-        "Genre": "MYSTERY"
-    },
-    {
         "Author": "F. SCOTT FITZGERALD",
         "Title": "THE SHINING",
-        "Genre": "ROMANCE"
-    },
-    {
-        "Author": "J.K. ROWLING",
-        "Title": "THE GREAT GATSBY",
         "Genre": "ROMANCE"
     },
     {
