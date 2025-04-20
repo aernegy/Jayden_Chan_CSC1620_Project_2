@@ -15,9 +15,11 @@ class Add_Dialog(Toplevel):
     Object attributes:
     self.parent -- a call for the parent Main object.
     self.new_book -- stores the new book's data in a dictionary.
+    self.books -- a call for the parent Library object's list of book
+    objects called the same name.
     """
 
-    def __init__(self, parent, gen_font):
+    def __init__(self, parent, gen_font, books):
         """ Creates the custom dialog box using tkinter's Toplevel object.
         Defines the widets used, places them into the dialog box, and other
         items.
@@ -28,6 +30,7 @@ class Add_Dialog(Toplevel):
 
         self.parent = parent
         self.new_book = None
+        self.books = books
         self.author = StringVar()
         self.title_var = StringVar()
         self.genre = StringVar()
@@ -89,8 +92,6 @@ class Add_Dialog(Toplevel):
         # Set initial keyboard focus to be on author_entry.
         author_entry.focus_set()
 
-        print(self.winfo_height())
-
 
     def on_ok(self):
         """ Handles the logic upon the user submitting their inputs.
@@ -105,16 +106,22 @@ class Add_Dialog(Toplevel):
 
         # If any entry is empty:
         if not author or not title or not genre:
-            messagebox.showwarning(
-                "Fields cannot be empty", 
-                "Please fill all fields."
-                )
+            messagebox.showwarning("Fields cannot be empty", 
+                                   "Please fill all fields.")
             
             # Does not close the dialog box.
             return
         
         self.new_book = Book(author.upper(), title.upper(), genre.upper())
+        
+        #
+        if repr(self.new_book) in [repr(book) for book in self.books]:
+            messagebox.showwarning("Duplicate detected", 
+                                   "This book has already been added.")
 
+            # Does not close the dialog box.
+            return
+        
         # Close the dialog box.
         self.destroy()
 

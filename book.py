@@ -11,3 +11,7 @@ class Book:
         self.author = author
         self.title = title
         self.genre = genre
+
+
+    def __repr__(self):
+        return f"{self.title}"
