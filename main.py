@@ -12,6 +12,7 @@ class Main:
     start_gui()
     tree_insert_handler(books)
     sel_handler(select=False)
+    titlecase(text)
 
     Object attributes:
     self.root -- the GUI main window.

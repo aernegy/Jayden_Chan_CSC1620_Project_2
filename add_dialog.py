@@ -3,7 +3,7 @@ from tkinter import messagebox
 from book import Book
 
 
-class Add_Dialog(Toplevel):
+class AddDialog(Toplevel):
     """ Handles the custom dialog box generated to handle user input for
     adding a new book and sends the input data to a Library object. Inherits
     from tkinter.Toplevel.

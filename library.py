@@ -62,7 +62,7 @@ class Library:
         program records of Book objects and IIDs to reflect new data.
         """
 
-        add_dialog = Add_Dialog(self.parent.root, self.parent.gen_font, 
+        add_dialog = AddDialog(self.parent.root, self.parent.gen_font, 
                                 self.books)
         
         # Forces the program to wait for add_dialog to terminate before
