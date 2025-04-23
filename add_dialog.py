@@ -54,8 +54,8 @@ class AddDialog(Toplevel):
         title_entry = Entry(self, font=gen_font, textvariable=self.title_var)
         genre_label = ttk.Label(self, text="Genre:")
         genre_entry = Entry(self, font=gen_font, textvariable=self.genre)
-        ok = Button(self, text="OK", command=self.on_ok)
-        cancel = Button(self, text="Cancel", command=self.on_cancel)
+        ok = ttk.Button(self, text="OK", command=self.on_ok)
+        cancel = ttk.Button(self, text="Cancel", command=self.on_cancel)
         
 
         ########################
@@ -70,6 +70,8 @@ class AddDialog(Toplevel):
         ok.grid(row=3, column=0, padx=5, pady=10, sticky="w")
         cancel.grid(row=3, column=1, padx=5, pady=10, sticky="e")
 
+        self.columnconfigure(0, weight=1)
+        self.columnconfigure(1, weight=3)
 
         #####################
         ## Misc. measures. ##
