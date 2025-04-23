@@ -78,7 +78,13 @@ class Main:
             main_window, text="Search for a title or author: ", anchor="w")
         self.search_entry = ttk.Entry(
             main_window, textvariable=self.search_value, font=self.gen_font)
-        
+        search_button = ttk.Button(
+            main_window, text="Search", 
+            command=lambda s=self.search_value: self.library.search(s.get()))
+        clear_search = ttk.Button(
+            main_window, text="Clear Search", 
+            command=lambda: self.library.search(""))
+
         self.tree = ttk.Treeview(
             main_window, selectmode="extended", show="headings")
         
@@ -88,13 +94,9 @@ class Main:
         # Define the scrollbar and set it to shift tree vertically.
         scrollbar = ttk.Scrollbar(main_window, command=self.tree.yview)
         
-        search_button = ttk.Button(
-            main_window, text="Search", 
-            command=lambda s=self.search_value: self.library.search(s.get()))
-        clear_search = ttk.Button(
-            main_window, text="Clear Search", 
-            command=lambda: self.library.search(""))
         add = ttk.Button(main_window, text="Add", command=self.library.add)
+        edit = ttk.Label(
+            main_window, text="Double-click row to edit", anchor="w")
         unsel = ttk.Button(
             main_window, text="Unselect", 
             command=lambda: self.sel_handler(False))
@@ -145,6 +147,7 @@ class Main:
         self.tree.grid(row=2, column=0, columnspan=8, sticky="nesw")
         scrollbar.grid(row=2, column=7, sticky="nes")
         add.grid(row=3, column=0, sticky="sw", pady=10)
+        edit.grid(row=3, column=1, sticky="w", padx=5, pady=10)
         unsel.grid(row=3, column=5, sticky="es", padx=5, pady=10)
         sel_all.grid(row=3, column=6, sticky="es", padx=5, pady=10)
         delete.grid(row=3, column=7, sticky="es", padx=5, pady=10)
@@ -152,6 +155,7 @@ class Main:
         # Ensure tree and search_entry expand horizontally
         # upon window resizing.
         main_window.columnconfigure(0, weight=1)
+        main_window.columnconfigure(1, weight=100)
 
         # Ensure the tree expands vertically upon window resizing.
         main_window.rowconfigure(2, weight=1)
@@ -174,6 +178,8 @@ class Main:
         self.search_entry.bind(
             "<Return>", 
             lambda e, s=self.search_value: self.library.search(s.get()))
+        
+        self.tree.bind("<Double-1>", lambda e: self.double_click_handler(e))
 
 
     def tree_insert_handler(self, books):
@@ -210,6 +216,20 @@ class Main:
 
         else:
             self.tree.selection_remove(tuple(self.tree.get_children()))
+
+
+    def double_click_handler(self, event):
+        iid = self.tree.identify_row(event.y)
+
+        if not iid:
+            return
+        
+        index = self.book_iid.index(iid)
+
+        print(f"Double-clicked on item: {iid}") 
+        print(f"Book index: {index}")           
+
+        self.library.edit(index, iid)  
 
 
     @staticmethod

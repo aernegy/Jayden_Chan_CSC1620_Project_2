@@ -63,7 +63,7 @@ class Library:
         """
 
         add_dialog = AddDialog(self.parent.root, self.parent.gen_font, 
-                               self.parent.bold_font, self.books)
+                               self.books)
         
         # Forces the program to wait for add_dialog to terminate before
         # continuing.
@@ -118,11 +118,12 @@ class Library:
                 # & book_iid. E.g.:
                 # index = self.parent.book_iid.index(book)
                 #########
-                
+                print("Book iid:", book)
+                print("Iteration book_iid:", self.parent.book_iid)
                 index = self.parent.book_iid.index(book)
                 self.parent.tree.delete(book)
-                del self.parent.book_iid[index - error]
-                del self.books[index - error]
+                del self.parent.book_iid[index]
+                del self.books[index]
                 error += 1
 
             self.save()
@@ -197,3 +198,52 @@ class Library:
             # Rewrites the entire JSON file with the latest records.
             with open(self.file_name, "w") as books_json:
                 dump(save_file, books_json, indent=4)
+
+
+    def edit(self, index, iid):
+        add_dialog = AddDialog(self.parent.root, self.parent.gen_font, 
+                               self.books, index, iid, edit=True)
+        
+        # Forces the program to wait for add_dialog to terminate before
+        # continuing.
+        self.parent.root.wait_window(add_dialog)
+
+        new_book = add_dialog.new_book
+
+        print("Edited book:", new_book)
+
+        # if new_book:
+        #     self.books.append(new_book)
+        #     self.parent.book_iid.append(
+        #         self.parent.tree.insert(
+        #             "", END, values=(
+        #                 self.parent.titlecase(new_book.author), 
+        #                 self.parent.titlecase(new_book.title), 
+        #                 self.parent.titlecase(new_book.genre))))
+
+        #     # Focuses and sets user selection to the new book.
+        #     self.parent.tree.see(self.parent.tree.get_children()[-1])
+        #     self.parent.tree.selection_remove(
+        #         tuple(self.parent.tree.get_children()))
+        #     self.parent.tree.selection_set(self.parent.tree.get_children()[-1])
+        #     self.save()
+
+        if new_book:
+            self.books[index].author = new_book.author
+            self.books[index].title = new_book.title
+            self.books[index].genre = new_book.genre
+
+            print("Edited book:" ,self.books[index])
+
+            self.parent.tree.item(
+                iid, values=(
+                    self.parent.titlecase(new_book.author), 
+                    self.parent.titlecase(new_book.title), 
+                    self.parent.titlecase(new_book.genre)))
+
+            # Focuses and sets user selection to the new book.
+            self.parent.tree.see(iid)
+            self.parent.tree.selection_remove(
+                tuple(self.parent.tree.selection()))
+            self.parent.tree.selection_set(iid)
+            self.save()
