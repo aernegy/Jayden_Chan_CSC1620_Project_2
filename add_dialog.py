@@ -49,11 +49,11 @@ class AddDialog(Toplevel):
         ## Define widgets to be used. ##
         ################################
         author_label = ttk.Label(self, text="Author:")
-        author_entry = Entry(self, textvariable=self.author)
+        author_entry = Entry(self, font=gen_font, textvariable=self.author)
         title_label = ttk.Label(self, text="Title:")
-        title_entry = Entry(self, textvariable=self.title_var)
+        title_entry = Entry(self, font=gen_font, textvariable=self.title_var)
         genre_label = ttk.Label(self, text="Genre:")
-        genre_entry = Entry(self, textvariable=self.genre)
+        genre_entry = Entry(self, font=gen_font, textvariable=self.genre)
         ok = Button(self, text="OK", command=self.on_ok)
         cancel = Button(self, text="Cancel", command=self.on_cancel)
         
