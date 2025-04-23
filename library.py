@@ -63,23 +63,34 @@ class Library:
         """
 
         add_dialog = AddDialog(self.parent.root, self.parent.gen_font, 
-                                self.books)
+                               self.parent.bold_font, self.books)
         
         # Forces the program to wait for add_dialog to terminate before
         # continuing.
         self.parent.root.wait_window(add_dialog)
         
         new_book = add_dialog.new_book
+
+        ##########
+        # Instead of tree_insert_handler, add from here directly.
+        # Make sure to update book_iid list & books.
+        ##########
         
         if new_book:
             self.books.append(new_book)
-            self.parent.tree_insert_handler(self.books)
+            self.parent.book_iid.append(
+                self.parent.tree.insert(
+                    "", END, values=(
+                        self.parent.titlecase(new_book.author), 
+                        self.parent.titlecase(new_book.title), 
+                        self.parent.titlecase(new_book.genre))))
 
             # Focuses and sets user selection to the new book.
             self.parent.tree.see(self.parent.tree.get_children()[-1])
             self.parent.tree.selection_remove(
                 tuple(self.parent.tree.get_children()))
             self.parent.tree.selection_set(self.parent.tree.get_children()[-1])
+            self.save()
 
 
     def delete(self):
@@ -100,13 +111,21 @@ class Library:
                 message="Confirm deletion of selected books?"):
             error = 0
             for book in self.parent.tree.selection():
-                index = self.parent.tree.get_children().index(book)
+                #########
+                # Identify the index of the iid inside book_iid.
+                # Use the iid to delete from the tree
+                # Use the iid's index in book_iid to delete from books
+                # & book_iid. E.g.:
+                # index = self.parent.book_iid.index(book)
+                #########
                 
+                index = self.parent.book_iid.index(book)
+                self.parent.tree.delete(book)
+                del self.parent.book_iid[index - error]
                 del self.books[index - error]
                 error += 1
 
-            # Update the tree with the new list of books.
-            self.parent.tree_insert_handler(self.books)
+            self.save()
 
 
     def search(self, search_value="", event=None):
@@ -120,12 +139,19 @@ class Library:
         binds. Does nothing. (default: None)
         """
 
+        ###########
+        # Use search_result to store index of the search result in books
+        # Use the same index to refer to the same book's index in book_iid
+        # Detach all other items from tree.
+        # Use the book's iid to move the books back onto the tree.
+        ###########
+
         search_value = search_value.strip().upper()
         search_result = []
 
         # If the user searches for nothing/clears search results:
         if search_value == "":
-            search_result = self.books
+            search_result = range(len(self.books))
 
             # Delete the search value entered into the search bar.
             self.parent.search_entry.delete(0, END)
@@ -134,10 +160,18 @@ class Library:
             for book in self.books:
                 if (search_value in book.author 
                         or search_value in book.title):
-                    search_result.append(book)
+                    search_result.append(self.books.index(book))
         
         # Updates the items in the tree with the appropriate results.
-        self.parent.tree_insert_handler(search_result)
+        for item in self.parent.tree.get_children():
+            self.parent.tree.detach(item)
+
+        if not search_result:
+            messagebox.showinfo(title="Empty Search Results",
+                                message="No search results found.")
+
+        for book in search_result:
+            self.parent.tree.move(self.parent.book_iid[book], "", END)
 
 
     def save(self):

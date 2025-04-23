@@ -1,5 +1,5 @@
 from tkinter import *
-from tkinter import messagebox
+from tkinter import messagebox, ttk
 from book import Book
 
 
@@ -19,7 +19,7 @@ class AddDialog(Toplevel):
     objects called the same name.
     """
 
-    def __init__(self, parent, gen_font, books):
+    def __init__(self, parent, gen_font, bold_font, books):
         """ Creates the custom dialog box using tkinter's Toplevel object.
         Defines the widets used, places them into the dialog box, and other
         items.
@@ -48,15 +48,14 @@ class AddDialog(Toplevel):
         ################################
         ## Define widgets to be used. ##
         ################################
-        author_label = Label(self, text="Author:", font=gen_font)
-        author_entry = Entry(self, font=gen_font, textvariable=self.author)
-        title_label = Label(self, text="Title:", font=gen_font)
-        title_entry = Entry(self, font=gen_font, textvariable=self.title_var)
-        genre_label = Label(self, text="Genre:", font=gen_font)
-        genre_entry = Entry(self, font=gen_font, textvariable=self.genre)
-        ok = Button(self, text="OK", command=self.on_ok, font=gen_font)
-        cancel = Button(self, text="Cancel", command=self.on_cancel, 
-                        font=gen_font)
+        author_label = ttk.Label(self, text="Author:")
+        author_entry = Entry(self, textvariable=self.author)
+        title_label = ttk.Label(self, text="Title:")
+        title_entry = Entry(self, textvariable=self.title_var)
+        genre_label = ttk.Label(self, text="Genre:")
+        genre_entry = Entry(self, textvariable=self.genre)
+        ok = Button(self, text="OK", command=self.on_ok)
+        cancel = Button(self, text="Cancel", command=self.on_cancel)
         
 
         ########################

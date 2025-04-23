@@ -36,6 +36,7 @@ class Main:
 
         # Set font used throughout the GUI.
         self.gen_font = "Helvetica", 12
+        self.bold_font = "Helvetica", 12, "bold"
 
         # Change dialog box font.
         self.root.option_add('*Dialog.msg.font', self.gen_font)
@@ -46,8 +47,10 @@ class Main:
         self.search_entry = None
         self.search_value = StringVar()
 
-        # Initialize the library object.
+        # Initialize the library object & book IID list.
         self.library = Library(self)
+        # Used for calling treeview rows.
+        self.book_iid = []
 
         # Initialize the rest of the GUI.
         self.start_gui(self.root)        
@@ -107,9 +110,9 @@ class Main:
         ################################################
         style = ttk.Style()
         style.configure("TButton", font=self.gen_font)
-        style.configure("TLabel", font=self.gen_font)
+        style.configure("TLabel", font=self.bold_font)
         style.configure("Treeview", font=self.gen_font, rowheight=40)
-        style.configure("Treeview.Heading", font=self.gen_font)
+        style.configure("Treeview.Heading", font=self.bold_font)
 
         # Edit the tree headings and columns.
         for column in self.tree["columns"]:
@@ -122,8 +125,14 @@ class Main:
         self.tree.configure(yscrollcommand=scrollbar.set)
 
         # Insert all books into tree.
-        self.tree_insert_handler(self.library.books)
+        # self.tree_insert_handler(self.library.books)
 
+        for book in self.library.books:
+            self.book_iid.append(
+                self.tree.insert("", END, values=(self.titlecase(book.author), 
+                                              self.titlecase(book.title), 
+                                              self.titlecase(book.genre))))
+            
 
         ##############################################
         ## Place all widgets and edit their layout. ##
@@ -164,8 +173,7 @@ class Main:
         # is focused on search_entry.
         self.search_entry.bind(
             "<Return>", 
-            lambda e, s=self.search_value: self.library.search(s.get())
-            )
+            lambda e, s=self.search_value: self.library.search(s.get()))
 
 
     def tree_insert_handler(self, books):
