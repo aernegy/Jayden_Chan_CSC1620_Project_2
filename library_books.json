@@ -1,25 +1,5 @@
 [
     {
-        "Author": "J.K. ROWLING",
-        "Title": "HARRY POTTER AND THE PHILOSOPHER'S STONE",
-        "Genre": "FANTASY"
-    },
-    {
-        "Author": "GEORGE ORWELL",
-        "Title": "1984",
-        "Genre": "DYSTOPIAN"
-    },
-    {
-        "Author": "JANE AUSTEN",
-        "Title": "PRIDE AND PREJUDICE",
-        "Genre": "ROMANCE"
-    },
-    {
-        "Author": "F. SCOTT FITZGERALD",
-        "Title": "THE GREAT GATSBY",
-        "Genre": "LITERARY FICTION"
-    },
-    {
         "Author": "J.R.R. TOLKIEN",
         "Title": "THE LORD OF THE RINGS",
         "Genre": "FANTASY"

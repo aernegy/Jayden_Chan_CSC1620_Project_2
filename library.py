@@ -4,7 +4,7 @@ from contextlib import chdir
 from os.path import dirname
 from tkinter import *
 from tkinter import messagebox
-from add_dialog import Add_Dialog
+from add_dialog import AddDialog
 
 
 class Library:

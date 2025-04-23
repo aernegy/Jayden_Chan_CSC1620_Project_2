@@ -229,9 +229,9 @@ class Main:
         """
         
         return re.sub(r"[a-zA-Z]+('[a-zA-Z]+)?", 
-                        lambda match: (match.group()[0].upper() 
-                                        + match.group()[1:].lower()), 
-                        text)
+                      lambda match: (match.group()[0].upper() 
+                                     + match.group()[1:].lower()), 
+                      text)
 
 
 Main()
