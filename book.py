@@ -14,4 +14,5 @@ class Book:
 
 
     def __repr__(self):
-        return f"{self.title}"
+        """ Enables duplicate-checking when adding or editing books. """
+        return f"{self.title}{self.author}"

@@ -10,8 +10,8 @@ class Main:
 
     Public methods:
     start_gui()
-    tree_insert_handler(books)
     sel_handler(select=False)
+    double_click_handler(event=None)
     titlecase(text)
 
     Object attributes:
@@ -21,6 +21,9 @@ class Main:
     self.search_entry -- the Entry widget used for entering searching values.
     self.search_value -- a StringVar() storing the search value.
     self.library -- a Library object where book data is handled.
+    self.book_iid -- a list to store the treeview row IIDs of corresponding 
+    books in the parallel list self.library.books. Used to call rows in 
+    self.tree.
     """
 
     def __init__(self):
@@ -127,8 +130,6 @@ class Main:
         self.tree.configure(yscrollcommand=scrollbar.set)
 
         # Insert all books into tree.
-        # self.tree_insert_handler(self.library.books)
-
         for book in self.library.books:
             self.book_iid.append(
                 self.tree.insert("", END, values=(self.titlecase(book.author), 
@@ -179,27 +180,8 @@ class Main:
             "<Return>", 
             lambda e, s=self.search_value: self.library.search(s.get()))
         
+        # Double-click on the tree to edit the clicked row.
         self.tree.bind("<Double-1>", lambda e: self.double_click_handler(e))
-
-
-    def tree_insert_handler(self, books):
-        """ Handles editing items in tree upon adding, deleting, 
-        initializing, and searching books.
-
-        Removes all items from self.tree and their IIDs, 
-        then inserts books into self.tree while recording their IIDs.
-
-        Keyword parameters:
-        books -- the list of Book objects to load onto the tree. (required)
-        """
-
-        # Deletes all items in tree.
-        self.tree.delete(*self.tree.get_children())       
-        
-        for book in books:
-            self.tree.insert("", END, values=(self.titlecase(book.author), 
-                                              self.titlecase(book.title), 
-                                              self.titlecase(book.genre)))
 
 
     def sel_handler(self, select=False):
@@ -218,16 +200,25 @@ class Main:
             self.tree.selection_remove(tuple(self.tree.get_children()))
 
 
-    def double_click_handler(self, event):
+    def double_click_handler(self, event=None):
+        """ Identifies the row that the user double-clicked, then sends
+        the row IID and the corresponding book's index in books and book_iid
+        to the library edit function.
+
+        Keyword parameters:
+        event -- Receives the event object from tkinter bind. Enables
+        identification of the row clicked.
+        """
+
+        # Use the y-coordinate of the event object to identify the row 
+        # clicked by its IID.
         iid = self.tree.identify_row(event.y)
 
+        # Terminate the process if no legitimate row was clicked.
         if not iid:
             return
         
-        index = self.book_iid.index(iid)
-
-        print(f"Double-clicked on item: {iid}") 
-        print(f"Book index: {index}")           
+        index = self.book_iid.index(iid)        
 
         self.library.edit(index, iid)  
 

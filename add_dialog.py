@@ -5,24 +5,39 @@ from book import Book
 
 class AddDialog(Toplevel):
     """ Handles the custom dialog box generated to handle user input for
-    adding a new book and sends the input data to a Library object. Inherits
-    from tkinter.Toplevel.
+    adding a new book and editing book details, and sends the input data 
+    to a Library object. Inherits from tkinter.Toplevel.
 
     Public methods:
     on_ok()
     on_cancel()
 
     Object attributes:
-    self.parent -- a call for the parent Main object.
     self.new_book -- stores the new book's data in a dictionary.
     self.books -- a call for the parent Library object's list of book
     objects called the same name.
+    self.edit -- stores the mode in which the object was instantiated for.
+    self.author/self.title_var/self.genre -- Stores the values inputted
+    into the corresponding entry widgets.
     """
 
     def __init__(self, parent, gen_font, books, index=0, iid="", edit=False):
         """ Creates the custom dialog box using tkinter's Toplevel object.
         Defines the widets used, places them into the dialog box, and other
         items.
+
+        Keyword parameters:
+        parent -- a call for the tkinter root to pass into the __init__
+        of the Toplevel parent. (required)
+        gen_font -- a call for the font style used in main.py. (required)
+        books -- a call for the parent Library object's list of book
+        objects called the same name. (required)
+        index -- the index of the book being edited. Used if AddDialog 
+        is instantiated for editing. (default: 0)
+        iid -- the treeview IID of the book being edited. Used if AddDialog
+        is instantiated for editing. (default: '')
+        edit -- a boolean value to determine whether to enable editing
+        features. (default: False)
         """
 
         # Call the __init__ function of Toplevel, passing Main as the root.
@@ -35,14 +50,18 @@ class AddDialog(Toplevel):
         self.title_var = StringVar()
         self.genre = StringVar()
 
+        # If in editing mode, set the default values of the entry widgets
+        # to be the details of the book being edited. Also set the window
+        # title appropriately.
         if self.edit:
             self.author.set(self.books[index].author)
             self.title_var.set(self.books[index].title)
             self.genre.set(self.books[index].genre)
-
-            print(self.genre.get())
-
-        self.title("Add Book")
+            self.title("Edit Book")
+        
+        else:
+            self.title("Add Book")
+        
         self.geometry("500x160")
         self.resizable(width=False, height=False)
 
@@ -63,9 +82,9 @@ class AddDialog(Toplevel):
         cancel = ttk.Button(self, text="Cancel", command=self.on_cancel)
         
 
-        ########################
-        ## Place all widgets. ##
-        ########################
+        ###########################################
+        ## Place all widgets and configure them. ##
+        ###########################################
         author_label.grid(row=0, column=0, padx=15, pady=5, sticky="w")
         author_entry.grid(row=0, column=1, padx=15, pady=5, sticky="ew")
         title_label.grid(row=1, column=0, padx=15, pady=5, sticky="w")
@@ -125,7 +144,7 @@ class AddDialog(Toplevel):
         
         self.new_book = Book(author.upper(), title.upper(), genre.upper())
         
-        # If new_book's title is the same with an existing book
+        # If new_book's title and author is the same with an existing book
         # and the dialog is not open for editing a book:
         if (repr(self.new_book) in [repr(book) for book in self.books] 
                 and not self.edit):
@@ -136,12 +155,14 @@ class AddDialog(Toplevel):
             # Does not close the dialog box.
             return
         
-        print(self.new_book)
         # Close the dialog box.
         self.destroy()
 
 
     def on_cancel(self):
-        """ Closes the dialog box when the user presses 'cancel'."""
+        """ Closes the dialog box when the user presses 'cancel'. 
+        Ensures the object returns void.
+        """
+
         self.new_book = None
         self.destroy()

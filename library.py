@@ -14,13 +14,16 @@ class Library:
     Public methods:
     add()
     delete() 
-    search() 
+    search(search_value='', event=None) 
     save()
+    edit(index, iid)
 
     Object attributes:
     self.parent -- a call for the parent Main object.
     self.books -- a list of Book objects loaded from the JSON records,
-    used to later dump into the same JSON file.
+    used to later dump into the same JSON file. Maintained to be parallel
+    with main.py's book_iid list, such that a book object of an index in 
+    books has the same index in book_iid.
     self.file_name -- the name of the targeted JSON fie.
     """
 
@@ -47,7 +50,7 @@ class Library:
                                 book["Author"], book["Title"], book["Genre"]))
 
             # If the specified file of the library records does not exist,
-            # create a new json file with the same name then open it.
+            # create a new JSON file with the same name then open it.
             except FileNotFoundError as e:
                 print(f"{e}. Creating new '{self.file_name}' file")
                 with open(self.file_name, "w+") as books_json:
@@ -70,12 +73,9 @@ class Library:
         self.parent.root.wait_window(add_dialog)
         
         new_book = add_dialog.new_book
-
-        ##########
-        # Instead of tree_insert_handler, add from here directly.
-        # Make sure to update book_iid list & books.
-        ##########
         
+        # If a book was added, add its details and IID to the corresponding
+        # lists, then focus on it in the tree and save the changes.
         if new_book:
             self.books.append(new_book)
             self.parent.book_iid.append(
@@ -85,7 +85,7 @@ class Library:
                         self.parent.titlecase(new_book.title), 
                         self.parent.titlecase(new_book.genre))))
 
-            # Focuses and sets user selection to the new book.
+            # Focuses and sets user selection to the new book, then saves.
             self.parent.tree.see(self.parent.tree.get_children()[-1])
             self.parent.tree.selection_remove(
                 tuple(self.parent.tree.get_children()))
@@ -109,22 +109,13 @@ class Library:
         elif messagebox.askokcancel(
                 title="Delete books", 
                 message="Confirm deletion of selected books?"):
-            error = 0
+            # Identify each book's index in book_iid and self.books
+            # using its IID. Then remove it from the tree widget and lists.
             for book in self.parent.tree.selection():
-                #########
-                # Identify the index of the iid inside book_iid.
-                # Use the iid to delete from the tree
-                # Use the iid's index in book_iid to delete from books
-                # & book_iid. E.g.:
-                # index = self.parent.book_iid.index(book)
-                #########
-                print("Book iid:", book)
-                print("Iteration book_iid:", self.parent.book_iid)
                 index = self.parent.book_iid.index(book)
                 self.parent.tree.delete(book)
                 del self.parent.book_iid[index]
                 del self.books[index]
-                error += 1
 
             self.save()
 
@@ -140,14 +131,10 @@ class Library:
         binds. Does nothing. (default: None)
         """
 
-        ###########
-        # Use search_result to store index of the search result in books
-        # Use the same index to refer to the same book's index in book_iid
-        # Detach all other items from tree.
-        # Use the book's iid to move the books back onto the tree.
-        ###########
-
         search_value = search_value.strip().upper()
+
+        # Used to store the index of search results 
+        # in book_iid and self.books.
         search_result = []
 
         # If the user searches for nothing/clears search results:
@@ -163,7 +150,7 @@ class Library:
                         or search_value in book.title):
                     search_result.append(self.books.index(book))
         
-        # Updates the items in the tree with the appropriate results.
+        # Temporarily removes all items from the tree widget.
         for item in self.parent.tree.get_children():
             self.parent.tree.detach(item)
 
@@ -171,6 +158,7 @@ class Library:
             messagebox.showinfo(title="Empty Search Results",
                                 message="No search results found.")
 
+        # Reattaches the search results to the tree widget.
         for book in search_result:
             self.parent.tree.move(self.parent.book_iid[book], "", END)
 
@@ -201,6 +189,16 @@ class Library:
 
 
     def edit(self, index, iid):
+        """ Handles the logic behind editing functionality. Calls a dialog
+        box to enable users to edit book details. Then, updates the details
+        in self.books, the tree widget, and the JSON records.
+
+        Keyword parameters:
+        index -- the index of the selected item in book_iid and self.books 
+        (required).
+        iid -- the IID of the selected item in the tree widget (required).
+        """
+
         add_dialog = AddDialog(self.parent.root, self.parent.gen_font, 
                                self.books, index, iid, edit=True)
         
@@ -210,38 +208,19 @@ class Library:
 
         new_book = add_dialog.new_book
 
-        print("Edited book:", new_book)
-
-        # if new_book:
-        #     self.books.append(new_book)
-        #     self.parent.book_iid.append(
-        #         self.parent.tree.insert(
-        #             "", END, values=(
-        #                 self.parent.titlecase(new_book.author), 
-        #                 self.parent.titlecase(new_book.title), 
-        #                 self.parent.titlecase(new_book.genre))))
-
-        #     # Focuses and sets user selection to the new book.
-        #     self.parent.tree.see(self.parent.tree.get_children()[-1])
-        #     self.parent.tree.selection_remove(
-        #         tuple(self.parent.tree.get_children()))
-        #     self.parent.tree.selection_set(self.parent.tree.get_children()[-1])
-        #     self.save()
-
         if new_book:
             self.books[index].author = new_book.author
             self.books[index].title = new_book.title
             self.books[index].genre = new_book.genre
 
-            print("Edited book:" ,self.books[index])
-
+            # Edits the details in the tree widget.
             self.parent.tree.item(
                 iid, values=(
                     self.parent.titlecase(new_book.author), 
                     self.parent.titlecase(new_book.title), 
                     self.parent.titlecase(new_book.genre)))
 
-            # Focuses and sets user selection to the new book.
+            # Focuses and sets user selection to the new book, then saves.
             self.parent.tree.see(iid)
             self.parent.tree.selection_remove(
                 tuple(self.parent.tree.selection()))
